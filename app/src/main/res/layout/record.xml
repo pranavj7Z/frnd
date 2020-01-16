@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:gravity="center"
+              android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb"
+            android:background="#ffffff"
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:textSize="15sp"
+                android:layout_weight="1"
+                android:lines="2"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="Tell Something"
+                android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cns1"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:id="@+id/mic"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="100dp"
+                    app:srcCompat="@drawable/ic_mic_gray"
+                    android:layout_height="100dp" tools:ignore="VectorDrawableCompat"/>
+            <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/menuAnimation2"
+                    app:layout_constraintBottom_toBottomOf="@id/mic"
+                    app:layout_constraintTop_toTopOf="@+id/mic"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="300dp"
+                    android:visibility="invisible"
+                    android:layout_height="300dp"
+                    app:lottie_fileName="animations/record.json" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <Button
+                android:layout_width="75dp"
+                android:id="@+id/record"
+                android:background="@drawable/round"
+                android:text="Record"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:layout_height="75dp" />
+
+        <Button
+                android:id="@+id/save"
+                android:layout_width="100dp"
+                android:text="Upload"
+                android:layout_marginBottom="20dp"
+                android:layout_height="50dp">
+        </Button>
+
+    </LinearLayout>
+</LinearLayout>
